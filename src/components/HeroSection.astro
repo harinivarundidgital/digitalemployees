@@ -23,7 +23,7 @@
       <div id="hero-mesh-glow" class="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] sm:w-[1100px] h-[480px] vercel-mesh-gradient opacity-35 rounded-full filter blur-[60px]"></div>
       
       <!-- DIGITAL EMPLOYEES LOW OPACITY WATERMARK -->
-      <div id="hero-watermark" class="absolute top-[46%] sm:top-[48%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-full flex flex-col items-center justify-center pointer-events-none select-none opacity-[0.035] sm:opacity-[0.045] px-4 overflow-hidden">
+      <div id="hero-watermark" class="absolute top-[46%] sm:top-[48%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-full flex flex-col items-center justify-center pointer-events-none select-none opacity-[0.015] sm:opacity-[0.02] px-4 overflow-hidden">
         <span class="block text-[14vw] sm:text-[12vw] md:text-[10vw] lg:text-[9.5vw] font-black uppercase tracking-tighter sm:tracking-normal text-black leading-[0.82] text-center max-w-full">
           Digital
         </span>
@@ -40,17 +40,17 @@
     <div id="hero-header-text" class="relative z-10 w-full max-w-4xl mx-auto flex flex-col items-center text-center pointer-events-none mb-2 sm:mb-4">
       <h1 
         id="hero-heading" 
-        class="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-[1.08] max-w-4xl mx-auto text-gray-500"
+        class="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-[1.08] max-w-4xl mx-auto text-gray-900"
       >
-        <span class="block text-gray-500">Meet the AI Workforce</span>
-        <span class="block text-transparent bg-clip-text bg-gradient-to-r from-gray-400 via-gray-500 to-gray-600">
+        <span class="block text-gray-900">Meet the AI Workforce</span>
+        <span class="block text-transparent bg-clip-text bg-gradient-to-r from-gray-500 via-gray-700 to-gray-900">
           That Never Stops Working
         </span>
       </h1>
 
       <p 
         id="hero-desc" 
-        class="mt-2.5 sm:mt-3.5 text-sm sm:text-base md:text-lg text-gray-500 max-w-[620px] mx-auto font-medium tracking-tight leading-relaxed"
+        class="mt-2.5 sm:mt-3.5 text-base sm:text-lg md:text-xl text-gray-600 max-w-[660px] mx-auto font-medium tracking-tight leading-relaxed"
       >
         Intelligent AI employees that chat, call and automate your business 24/7.
       </p>
@@ -73,157 +73,109 @@
     <!-- SCROLL-DRIVEN ALTERNATING LEFT/RIGHT CONTENT CARDS OVERLAY -->
     <div class="absolute inset-0 z-40 pointer-events-none flex items-center justify-center max-w-[1400px] mx-auto px-3 sm:px-6 lg:px-8">
       
-      <!-- STAGE 1: AI CHATBOT AVATARS (LEFT SIDE - APPLE STYLE GLASS) -->
+      <!-- STAGE 1: AI CHATBOT AVATARS (LEFT SIDE - APPLE STYLE TYPOGRAPHY) -->
       <div 
         id="scroll-stage-1" 
-        class="absolute left-3 sm:left-6 lg:left-10 top-[38%] sm:top-[42%] md:top-[45%] -translate-y-1/2 max-w-[290px] sm:max-w-[350px] md:max-w-[380px] w-full pointer-events-auto transition-all duration-300"
+        class="absolute left-4 sm:left-8 lg:left-12 top-[38%] sm:top-[42%] md:top-[45%] -translate-y-1/2 max-w-[320px] sm:max-w-[380px] md:max-w-[420px] w-full pointer-events-auto transition-all duration-300"
         style="opacity: 0; transform: translateY(40px);"
       >
-        <div class="p-5 sm:p-6 bg-white/80 dark:bg-black/80 backdrop-blur-2xl rounded-[24px] border border-black/[0.04] dark:border-white/[0.06] shadow-[0_24px_64px_rgba(0,0,0,0.04)] hover:shadow-[0_32px_80px_rgba(0,0,0,0.08)] hover:scale-[1.01] transition-all duration-300">
-          <div class="flex items-center justify-between mb-3.5">
-            <div class="flex items-center gap-2">
-              <span class="flex h-1.5 w-1.5 relative">
-                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-black/30 dark:bg-white/30 opacity-75"></span>
-                <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-black dark:bg-white"></span>
-              </span>
-              <span class="caption-mono text-[10px] font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-[0.15em]">AI Chatbot Avatars</span>
-            </div>
-            <span class="text-[9px] font-mono font-medium px-2 py-0.5 bg-black/[0.03] dark:bg-white/10 text-gray-500 dark:text-gray-400 rounded-full border border-black/[0.04] dark:border-white/[0.05]">01 / 04</span>
+        <div class="space-y-4">
+          <div class="flex items-center gap-3">
+            <span class="text-xs sm:text-sm font-mono tracking-[0.2em] text-[#06c] uppercase font-bold">01 — AI Chatbots</span>
+            <span class="w-8 h-[1px] bg-gray-300"></span>
           </div>
-          <h3 class="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white tracking-tight leading-snug mb-2">
+          <h3 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 tracking-tight leading-[1.1]">
             Conversational Avatars
           </h3>
-          <p class="text-xs sm:text-sm text-gray-500 dark:text-gray-400 leading-relaxed mb-4 font-normal">
+          <p class="text-base sm:text-lg text-gray-650 leading-relaxed font-normal">
             Interactive, human-like AI chatbot avatars that engage website visitors, answer queries instantly, and turn interactions into qualified conversions.
           </p>
-          <div class="flex flex-wrap gap-1.5 text-[10px] font-medium text-gray-600 dark:text-gray-300">
-            <span class="px-2.5 py-1 bg-black/[0.02] dark:bg-white/5 rounded-full border border-black/[0.04] dark:border-white/[0.05]">Multi-Modal AI</span>
-            <span class="px-2.5 py-1 bg-black/[0.02] dark:bg-white/5 rounded-full border border-black/[0.04] dark:border-white/[0.05]">Instant Response</span>
-            <span class="px-2.5 py-1 bg-black/[0.02] dark:bg-white/5 rounded-full border border-black/[0.04] dark:border-white/[0.05]">Lead Capture</span>
+          <div class="flex flex-wrap gap-2 pt-2 text-[10px] font-mono text-gray-400">
+            <span>• MULTI-MODAL AI</span>
+            <span>• INSTANT RESPONSE</span>
+            <span>• LEAD CAPTURE</span>
           </div>
         </div>
       </div>
 
-      <!-- STAGE 2: CALLINGO AGENT (RIGHT SIDE - APPLE STYLE GLASS) -->
+      <!-- STAGE 2: CALLINGO AGENT (RIGHT SIDE - APPLE STYLE TYPOGRAPHY) -->
       <div 
         id="scroll-stage-2" 
-        class="absolute right-3 sm:right-6 lg:left-auto lg:right-10 top-[38%] sm:top-[42%] md:top-[45%] -translate-y-1/2 max-w-[290px] sm:max-w-[350px] md:max-w-[380px] w-full pointer-events-auto transition-all duration-300"
+        class="absolute right-4 sm:right-8 lg:left-auto lg:right-12 top-[38%] sm:top-[42%] md:top-[45%] -translate-y-1/2 max-w-[320px] sm:max-w-[380px] md:max-w-[420px] w-full pointer-events-auto transition-all duration-300"
         style="opacity: 0; transform: translateY(40px);"
       >
-        <div class="p-5 sm:p-6 bg-white/80 dark:bg-black/80 backdrop-blur-2xl rounded-[24px] border border-black/[0.04] dark:border-white/[0.06] shadow-[0_24px_64px_rgba(0,0,0,0.04)] hover:shadow-[0_32px_80px_rgba(0,0,0,0.08)] hover:scale-[1.01] transition-all duration-300">
-          <div class="flex items-center justify-between mb-3.5">
-            <div class="flex items-center gap-2">
-              <span class="flex h-1.5 w-1.5 relative">
-                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-black/30 dark:bg-white/30 opacity-75"></span>
-                <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-black dark:bg-white"></span>
-              </span>
-              <span class="caption-mono text-[10px] font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-[0.15em]">Voice & Phone AI</span>
-            </div>
-            <span class="text-[9px] font-mono font-medium px-2 py-0.5 bg-black/[0.03] dark:bg-white/10 text-gray-500 dark:text-gray-400 rounded-full border border-black/[0.04] dark:border-white/[0.05]">02 / 04</span>
+        <div class="space-y-4">
+          <div class="flex items-center gap-3">
+            <span class="text-xs sm:text-sm font-mono tracking-[0.2em] text-[#06c] uppercase font-bold">02 — Voice Agent</span>
+            <span class="w-8 h-[1px] bg-gray-300"></span>
           </div>
-          <h3 class="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white tracking-tight leading-snug mb-2">
+          <h3 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 tracking-tight leading-[1.1]">
             Callingo Agent
           </h3>
-          <p class="text-xs sm:text-sm text-gray-500 dark:text-gray-400 leading-relaxed mb-4 font-normal">
+          <p class="text-base sm:text-lg text-gray-650 leading-relaxed font-normal">
             Autonomous voice agent placing and answering phone calls with ultra-low latency, dynamic voice pitch, appointment scheduling, and CRM logging.
           </p>
-          <!-- Call UI Audio Wave Widget -->
-          <div class="bg-black/[0.02] dark:bg-white/5 p-3 rounded-2xl border border-black/[0.04] dark:border-white/[0.06] flex items-center justify-between shadow-sm">
-            <div class="flex items-center gap-2.5">
-              <div class="w-7 h-7 rounded-full bg-gray-900 dark:bg-white flex items-center justify-center">
-                <svg class="w-3.5 h-3.5 text-white dark:text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-              </div>
-              <div>
-                <div class="text-[11px] font-semibold text-gray-800 dark:text-gray-250">Callingo Voice Agent</div>
-                <div class="text-[9px] text-gray-450 dark:text-gray-400 flex items-center gap-1 font-mono">
-                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-                  Active Call · 00:42
-                </div>
-              </div>
-            </div>
-            <div class="flex items-center gap-1 h-4">
-              <span class="w-0.5 h-2 bg-gray-400 dark:bg-gray-500 rounded-full animate-bounce"></span>
-              <span class="w-0.5 h-3.5 bg-gray-500 dark:bg-white rounded-full animate-bounce [animation-delay:0.15s]"></span>
-              <span class="w-0.5 h-1.5 bg-gray-400 dark:bg-gray-500 rounded-full animate-bounce [animation-delay:0.3s]"></span>
+          
+          <!-- Sleek minimalist wave representation -->
+          <div class="flex items-center gap-3 pt-2 text-[11px] text-gray-400 font-mono">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span>Active Voice stream</span>
+            <div class="flex items-end gap-1 h-3 ml-2">
+              <span class="w-0.5 h-1.5 bg-[#06c] rounded-full animate-bounce"></span>
+              <span class="w-0.5 h-3.5 bg-[#06c] rounded-full animate-bounce [animation-delay:0.15s]"></span>
+              <span class="w-0.5 h-2 bg-[#06c] rounded-full animate-bounce [animation-delay:0.3s]"></span>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- STAGE 3: AI-AGENT WORKFLOW (LEFT SIDE - APPLE STYLE GLASS) -->
+      <!-- STAGE 3: AI-AGENT WORKFLOW (LEFT SIDE - APPLE STYLE TYPOGRAPHY) -->
       <div 
         id="scroll-stage-3" 
-        class="absolute left-3 sm:left-6 lg:left-10 top-[38%] sm:top-[42%] md:top-[45%] -translate-y-1/2 max-w-[290px] sm:max-w-[350px] md:max-w-[380px] w-full pointer-events-auto transition-all duration-300"
+        class="absolute left-4 sm:left-8 lg:left-12 top-[38%] sm:top-[42%] md:top-[45%] -translate-y-1/2 max-w-[320px] sm:max-w-[380px] md:max-w-[420px] w-full pointer-events-auto transition-all duration-300"
         style="opacity: 0; transform: translateY(40px);"
       >
-        <div class="p-5 sm:p-6 bg-white/80 dark:bg-black/80 backdrop-blur-2xl rounded-[24px] border border-black/[0.04] dark:border-white/[0.06] shadow-[0_24px_64px_rgba(0,0,0,0.04)] hover:shadow-[0_32px_80px_rgba(0,0,0,0.08)] hover:scale-[1.01] transition-all duration-300">
-          <div class="flex items-center justify-between mb-3.5">
-            <div class="flex items-center gap-2">
-              <span class="flex h-1.5 w-1.5 relative">
-                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-black/30 dark:bg-white/30 opacity-75"></span>
-                <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-black dark:bg-white"></span>
-              </span>
-              <span class="caption-mono text-[10px] font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-[0.15em]">Automated Pipelines</span>
-            </div>
-            <span class="text-[9px] font-mono font-medium px-2 py-0.5 bg-black/[0.03] dark:bg-white/10 text-gray-500 dark:text-gray-400 rounded-full border border-black/[0.04] dark:border-white/[0.05]">03 / 04</span>
+        <div class="space-y-4">
+          <div class="flex items-center gap-3">
+            <span class="text-xs sm:text-sm font-mono tracking-[0.2em] text-[#06c] uppercase font-bold">03 — Pipelines</span>
+            <span class="w-8 h-[1px] bg-gray-300"></span>
           </div>
-          <h3 class="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white tracking-tight leading-snug mb-2">
-            AI-Agent Workflow
+          <h3 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 tracking-tight leading-[1.1]">
+            AI-Agent Workflows
           </h3>
-          <p class="text-xs sm:text-sm text-gray-500 dark:text-gray-400 leading-relaxed mb-4 font-normal">
+          <p class="text-base sm:text-lg text-gray-650 leading-relaxed font-normal">
             Multi-agent networks executing autonomous, end-to-end tasks across software repos, databases, APIs, and customer touchpoints without manual friction.
           </p>
-          <!-- Workflow Pipeline Node Graphic -->
-          <div class="space-y-1.5 text-[10px] font-medium text-gray-700 dark:text-gray-300">
-            <div class="p-2.5 bg-black/[0.02] dark:bg-white/5 rounded-xl border border-black/[0.03] dark:border-white/[0.05] flex items-center justify-between">
-              <span class="flex items-center gap-1.5">⚡ Trigger: Customer Signal</span>
-              <span class="text-[9px] text-gray-400 dark:text-gray-500 font-mono">Automated</span>
-            </div>
-            <div class="p-2.5 bg-black/[0.02] dark:bg-white/5 rounded-xl border border-black/[0.03] dark:border-white/[0.05] flex items-center justify-between">
-              <span class="flex items-center gap-1.5">🔄 Execute Callingo Voice Agent</span>
-              <span class="text-[9px] text-emerald-600 dark:text-emerald-400 font-semibold font-mono">Done</span>
-            </div>
-            <div class="p-2.5 bg-black/[0.02] dark:bg-white/5 rounded-xl border border-black/[0.03] dark:border-white/[0.05] flex items-center justify-between">
-              <span class="flex items-center gap-1.5">📊 Update CRM & Trigger Email</span>
-              <span class="text-[9px] text-gray-500 dark:text-gray-400 font-semibold font-mono">Synced</span>
-            </div>
+          <div class="space-y-1.5 pt-2 text-xs font-medium text-gray-400 border-l border-gray-200 pl-3">
+            <div class="text-[11px]">• Automated Customer Signal Trigger</div>
+            <div class="text-[11px] text-emerald-600 font-semibold">• Voice Agent Execution (Completed)</div>
+            <div class="text-[11px]">• CRM & Email Sync (Active)</div>
           </div>
         </div>
       </div>
 
-      <!-- STAGE 4: BUILT TO SUPPORT HUMANS NOT REPLACE THEM + VIDEO PLAYBOX (RIGHT SIDE - APPLE STYLE GLASS) -->
+      <!-- STAGE 4: BUILT TO SUPPORT HUMANS NOT REPLACE THEM + VIDEO PLAYBOX (RIGHT SIDE - APPLE STYLE TYPOGRAPHY) -->
       <div 
         id="scroll-stage-4" 
-        class="absolute right-3 sm:right-5 lg:left-auto lg:right-8 top-[32%] sm:top-[36%] md:top-[40%] -translate-y-1/2 max-w-[310px] sm:max-w-[370px] md:max-w-[410px] w-full pointer-events-auto transition-all duration-300"
+        class="absolute right-4 sm:right-8 lg:left-auto lg:right-12 top-[32%] sm:top-[36%] md:top-[40%] -translate-y-1/2 max-w-[320px] sm:max-w-[380px] md:max-w-[420px] w-full pointer-events-auto transition-all duration-300"
         style="opacity: 0; transform: translateY(40px);"
       >
-        <div class="p-5 sm:p-6 bg-white/80 dark:bg-black/80 backdrop-blur-2xl rounded-[24px] border border-black/[0.04] dark:border-white/[0.06] shadow-[0_24px_64px_rgba(0,0,0,0.04)] hover:shadow-[0_32px_80px_rgba(0,0,0,0.08)] hover:scale-[1.01] transition-all duration-300">
-          
-          <div class="flex items-center justify-between mb-3.5">
-            <div class="flex items-center gap-2">
-              <span class="flex h-1.5 w-1.5 relative">
-                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-black/30 dark:bg-white/30 opacity-75"></span>
-                <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-black dark:bg-white"></span>
-              </span>
-              <span class="caption-mono text-[10px] font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-[0.15em]">Human Centric AI</span>
-            </div>
-            <span class="text-[9px] font-mono font-medium px-2 py-0.5 bg-black/[0.03] dark:bg-white/10 text-gray-500 dark:text-gray-400 rounded-full border border-black/[0.04] dark:border-white/[0.05]">04 / 04</span>
+        <div class="space-y-4">
+          <div class="flex items-center gap-3">
+            <span class="text-xs sm:text-sm font-mono tracking-[0.2em] text-[#06c] uppercase font-bold">04 — Human Centric</span>
+            <span class="w-8 h-[1px] bg-gray-300"></span>
           </div>
-
-          <!-- Heading -->
-          <h2 class="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white tracking-tight leading-snug mb-2">
+          <h3 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 tracking-tight leading-[1.1]">
             Built to Support Humans
-          </h2>
-
-          <!-- Short Description -->
-          <p class="text-xs sm:text-sm text-gray-500 dark:text-gray-400 leading-relaxed mb-4 font-normal">
+          </h3>
+          <p class="text-base sm:text-lg text-gray-650 leading-relaxed font-normal">
             Supercharging teams with AI force multipliers that handle routine operations, giving your workforce the bandwidth to innovate and lead.
           </p>
 
           <!-- Interactive Video Playbox (Click to play demo) -->
           <div 
             id="video-playbox-trigger" 
-            class="group relative w-full h-36 sm:h-44 rounded-2xl overflow-hidden cursor-pointer border border-black/[0.05] dark:border-white/[0.08] bg-gray-950 shadow-2xl transition-transform duration-300 hover:scale-[1.02]"
+            class="group relative w-full h-32 sm:h-36 rounded-2xl overflow-hidden cursor-pointer border border-black/[0.05] dark:border-white/[0.08] bg-gray-950 shadow-xl transition-transform duration-300 hover:scale-[1.02] mt-4"
             role="button"
             tabindex="0"
             aria-label="Play Digital Employees Demo Video"
@@ -253,19 +205,9 @@
                 </div>
               </div>
             </div>
-
-            <!-- Video Player Status Badge -->
-            <div class="absolute bottom-2.5 left-3 right-3 z-20 flex items-center justify-between text-[9px] text-white/80">
-              <span class="flex items-center gap-1 bg-black/60 px-2.5 py-0.5 rounded-full backdrop-blur-sm">
-                <span class="w-1 h-1 rounded-full bg-emerald-400"></span> Live Demo
-              </span>
-              <span class="bg-black/60 px-2.5 py-0.5 rounded-full backdrop-blur-sm font-mono text-[9px]">1:45</span>
-            </div>
           </div>
-
         </div>
       </div>
-
     </div>
 
     <!-- MOUSE SCROLL ANIMATION (BOTTOM RIGHT CORNER) -->
