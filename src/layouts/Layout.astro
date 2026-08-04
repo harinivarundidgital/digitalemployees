@@ -1,23 +1,46 @@
+---
+import '../styles/global.css';
+
+interface Props {
+	title?: string;
+	description?: string;
+}
+
+const { 
+	title = "Digital Employees | Autonomous AI Workforce Platform (digitalemployees.us)",
+	description = "Deploy specialized digital employees for engineering, research, design, and operations. Built for high-velocity software and enterprise teams."
+} = Astro.props;
+---
+
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 	<head>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		
+		<!-- SEO Best Practices -->
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<meta name="keywords" content="digital employees, autonomous AI agents, AI workforce, digitalemployees.us, AI engineering, AI agents" />
+		<meta name="author" content="Digital Employees Inc." />
+
+		<!-- Open Graph / Social -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://digitalemployees.us" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:site_name" content="Digital Employees" />
+		
+		<!-- Twitter -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
 	</head>
-	<body>
+	<body class="bg-white text-[#171717] antialiased selection:bg-[#171717] selection:text-[#f2f2f2] min-h-screen flex flex-col justify-between overflow-x-hidden">
 		<slot />
 	</body>
 </html>
-
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>

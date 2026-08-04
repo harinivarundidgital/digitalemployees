@@ -1,0 +1,144 @@
+---
+// AgentTerminalMockup.astro - Dark code editor & digital employee execution engine mockup
+// Implements code-editor-mockup primitive from DESIGN.md
+---
+
+<div class="w-full bg-[#171717] text-white rounded-xl border border-[#333333] shadow-vercel-float overflow-hidden font-mono text-xs sm:text-sm">
+  <!-- Terminal Top Bar -->
+  <div class="px-4 py-3 bg-[#0d0d0d] border-b border-[#262626] flex items-center justify-between">
+    <!-- Window Control Buttons -->
+    <div class="flex items-center gap-2">
+      <span class="w-3 h-3 rounded-full bg-[#ff5f56] inline-block"></span>
+      <span class="w-3 h-3 rounded-full bg-[#ffbd2e] inline-block"></span>
+      <span class="w-3 h-3 rounded-full bg-[#27c93f] inline-block"></span>
+    </div>
+
+    <!-- Active Agent Selector Tabs -->
+    <div class="hidden sm:flex items-center gap-1 bg-[#171717] p-1 rounded-md border border-[#262626]">
+      <button id="tab-engineer" class="terminal-tab px-2.5 py-1 text-xs font-medium text-white bg-[#262626] rounded transition-all">
+        senior-dev.agent
+      </button>
+      <button id="tab-security" class="terminal-tab px-2.5 py-1 text-xs font-medium text-[#888888] hover:text-white rounded transition-all">
+        sec-auditor.agent
+      </button>
+      <button id="tab-devops" class="terminal-tab px-2.5 py-1 text-xs font-medium text-[#888888] hover:text-white rounded transition-all">
+        sre-ops.agent
+      </button>
+    </div>
+  </div>
+
+  <!-- Terminal Body Content -->
+  <div class="p-4 sm:p-6 overflow-x-auto space-y-2 font-mono leading-relaxed">
+    <!-- Line 1: Command initialization -->
+    <div class="flex items-start gap-2 text-[#888888]">
+      <span class="text-[#0070f3] select-none">$</span>
+      <span class="text-white font-medium">npx digital-employee deploy --role senior-fullstack --team frontend</span>
+    </div>
+
+    <!-- Line 2: Agent Spawn Status -->
+    <div class="flex items-center gap-2 text-[#50e3c2] pt-1">
+      <svg class="w-4 h-4 animate-spin text-[#50e3c2]" fill="none" viewBox="0 0 24 24">
+        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+      </svg>
+      <span>[digitalemployees.us] Provisioning autonomous container sandbox...</span>
+    </div>
+
+    <!-- Terminal Output Log Container -->
+    <div id="terminal-log-output" class="space-y-1.5 pt-2 text-[#d4d4d4]">
+      <div class="flex items-center gap-2">
+        <span class="text-[#888888] text-xs">16:52:01</span>
+        <span class="px-1.5 py-0.5 text-[10px] bg-[#0070f3]/20 text-[#0070f3] rounded">INFO</span>
+        <span>Agent initialized with UniProt & AST parsing tools</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="text-[#888888] text-xs">16:52:03</span>
+        <span class="px-1.5 py-0.5 text-[10px] bg-[#50e3c2]/20 text-[#50e3c2] rounded">SUCCESS</span>
+        <span>Connected to GitHub repository: digitalemployees/core-app</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="text-[#888888] text-xs">16:52:05</span>
+        <span class="px-1.5 py-0.5 text-[10px] bg-[#7928ca]/20 text-[#c892ff] rounded">EXEC</span>
+        <span>Analyzing pull request #409: "Migrate Tailwind CSS to v4 with zero runtime overhead"</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="text-[#888888] text-xs">16:52:08</span>
+        <span class="px-1.5 py-0.5 text-[10px] bg-[#50e3c2]/20 text-[#50e3c2] rounded">TEST</span>
+        <span>Ran 842 automated unit tests across 16 parallel threads — 100% passed in 1.4s</span>
+      </div>
+      <div class="flex items-center gap-2 text-[#0070f3] font-medium pt-1">
+        <span class="text-[#888888] text-xs">16:52:10</span>
+        <span>✓ Pull Request #409 approved & merged to main. Autonomous deployment triggered.</span>
+      </div>
+    </div>
+
+    <!-- Active Prompt Cursor -->
+    <div class="flex items-center gap-2 pt-3 border-t border-[#262626] text-[#888888]">
+      <span class="text-[#50e3c2]">agent:senior-dev></span>
+      <span class="text-white">Awaiting next backlog task...</span>
+      <span class="w-2 h-4 bg-[#50e3c2] animate-pulse inline-block"></span>
+    </div>
+  </div>
+
+  <!-- Bottom Terminal Status Bar -->
+  <div class="px-4 py-2 bg-[#0d0d0d] border-t border-[#262626] flex items-center justify-between text-xs text-[#888888] font-sans">
+    <div class="flex items-center gap-4">
+      <span class="flex items-center gap-1.5">
+        <span class="w-2 h-2 rounded-full bg-[#50e3c2]"></span>
+        Agent Status: <strong class="text-white font-normal">Active & Executing</strong>
+      </span>
+      <span>Concurrency: <strong class="text-white font-normal">100 Threads</strong></span>
+    </div>
+    <span class="caption-mono text-[11px] text-[#0070f3]">digitalemployees.us/api/v2/stream</span>
+  </div>
+</div>
+
+<script>
+  // Simple tab toggle effect for terminal demo
+  const tabEngineer = document.getElementById('tab-engineer');
+  const tabSecurity = document.getElementById('tab-security');
+  const tabDevops = document.getElementById('tab-devops');
+  const terminalLogs = document.getElementById('terminal-log-output');
+
+  const logs = {
+    engineer: `
+      <div class="flex items-center gap-2"><span class="text-[#888888] text-xs">16:52:01</span><span class="px-1.5 py-0.5 text-[10px] bg-[#0070f3]/20 text-[#0070f3] rounded">INFO</span><span>Agent initialized with UniProt & AST parsing tools</span></div>
+      <div class="flex items-center gap-2"><span class="text-[#888888] text-xs">16:52:03</span><span class="px-1.5 py-0.5 text-[10px] bg-[#50e3c2]/20 text-[#50e3c2] rounded">SUCCESS</span><span>Connected to GitHub repository: digitalemployees/core-app</span></div>
+      <div class="flex items-center gap-2"><span class="text-[#888888] text-xs">16:52:05</span><span class="px-1.5 py-0.5 text-[10px] bg-[#7928ca]/20 text-[#c892ff] rounded">EXEC</span><span>Analyzing pull request #409: "Migrate Tailwind CSS to v4 with zero runtime overhead"</span></div>
+      <div class="flex items-center gap-2"><span class="text-[#888888] text-xs">16:52:08</span><span class="px-1.5 py-0.5 text-[10px] bg-[#50e3c2]/20 text-[#50e3c2] rounded">TEST</span><span>Ran 842 automated unit tests across 16 parallel threads — 100% passed in 1.4s</span></div>
+      <div class="flex items-center gap-2 text-[#0070f3] font-medium pt-1"><span class="text-[#888888] text-xs">16:52:10</span><span>✓ Pull Request #409 approved & merged to main. Autonomous deployment triggered.</span></div>
+    `,
+    security: `
+      <div class="flex items-center gap-2"><span class="text-[#888888] text-xs">16:52:01</span><span class="px-1.5 py-0.5 text-[10px] bg-[#eb367f]/20 text-[#eb367f] rounded">AUDIT</span><span>Scanning 1,240 package dependencies against CVE database...</span></div>
+      <div class="flex items-center gap-2"><span class="text-[#888888] text-xs">16:52:04</span><span class="px-1.5 py-0.5 text-[10px] bg-[#50e3c2]/20 text-[#50e3c2] rounded">PASS</span><span>0 Critical, 0 High vulnerability flags detected.</span></div>
+      <div class="flex items-center gap-2"><span class="text-[#888888] text-xs">16:52:07</span><span class="px-1.5 py-0.5 text-[10px] bg-[#0070f3]/20 text-[#0070f3] rounded">INFO</span><span>Auto-remediated minor dependency pin in package-lock.json</span></div>
+      <div class="flex items-center gap-2 text-[#50e3c2] font-medium pt-1"><span class="text-[#888888] text-xs">16:52:09</span><span>✓ Security audit certificate signed: SHA256-e91a03f4</span></div>
+    `,
+    devops: `
+      <div class="flex items-center gap-2"><span class="text-[#888888] text-xs">16:52:01</span><span class="px-1.5 py-0.5 text-[10px] bg-[#0070f3]/20 text-[#0070f3] rounded">K8S</span><span>Connecting to AWS EKS cluster us-east-1...</span></div>
+      <div class="flex items-center gap-2"><span class="text-[#888888] text-xs">16:52:03</span><span class="px-1.5 py-0.5 text-[10px] bg-[#7928ca]/20 text-[#c892ff] rounded">DEPLOY</span><span>Rolling update started: 48 worker pods replacing v2.3.9 -> v2.4.0</span></div>
+      <div class="flex items-center gap-2"><span class="text-[#888888] text-xs">16:52:06</span><span class="px-1.5 py-0.5 text-[10px] bg-[#50e3c2]/20 text-[#50e3c2] rounded">HEALTH</span><span>Synthetic health check probe returned 200 OK (latency: 1.2ms)</span></div>
+      <div class="flex items-center gap-2 text-[#0070f3] font-medium pt-1"><span class="text-[#888888] text-xs">16:52:08</span><span>✓ Deployment zero-downtime cutover complete on digitalemployees.us</span></div>
+    `
+  };
+
+  function setTab(activeTab, type) {
+    [tabEngineer, tabSecurity, tabDevops].forEach(t => {
+      if (t) {
+        t.classList.remove('bg-[#262626]', 'text-white');
+        t.classList.add('text-[#888888]');
+      }
+    });
+    if (activeTab) {
+      activeTab.classList.add('bg-[#262626]', 'text-white');
+      activeTab.classList.remove('text-[#888888]');
+    }
+    if (terminalLogs) {
+      terminalLogs.innerHTML = logs[type];
+    }
+  }
+
+  if (tabEngineer) tabEngineer.addEventListener('click', () => setTab(tabEngineer, 'engineer'));
+  if (tabSecurity) tabSecurity.addEventListener('click', () => setTab(tabSecurity, 'security'));
+  if (tabDevops) tabDevops.addEventListener('click', () => setTab(tabDevops, 'devops'));
+</script>
