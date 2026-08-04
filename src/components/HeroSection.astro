@@ -5,12 +5,23 @@
 
 <section id="hero-section" class="relative w-full max-w-[1400px] mx-auto overflow-hidden bg-white flex flex-col items-center justify-between select-none pt-20 sm:pt-24 pb-4 sm:pb-8 px-4 sm:px-6 lg:px-8 min-h-[calc(100vh-64px)]">
   
-  <!-- VERCEL SIGNATURE UNIFIED BACKGROUND (Grid Backdrop + Soft Ambient Mesh Glow) -->
+  <!-- VERCEL SIGNATURE UNIFIED BACKGROUND (Grid Backdrop + Soft Ambient Mesh Glow + Watermark) -->
   <div class="absolute inset-0 pointer-events-none z-0 overflow-hidden select-none">
     <!-- Vercel Line Grid -->
     <div class="absolute inset-0 bg-grid-pattern opacity-40"></div>
     <!-- Vercel Ambient Mesh Glow -->
-    <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] sm:w-[1100px] h-[480px] vercel-mesh-gradient opacity-35 rounded-full filter blur-[60px]"></div>
+    <div id="hero-mesh-glow" class="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] sm:w-[1100px] h-[480px] vercel-mesh-gradient opacity-35 rounded-full filter blur-[60px]"></div>
+    
+    <!-- DIGITAL EMPLOYEES LOW OPACITY WATERMARK (2 LINES - RESPONSIVE - NO OVERFLOW) -->
+    <div id="hero-watermark" class="absolute top-[48%] sm:top-[52%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-full flex flex-col items-center justify-center pointer-events-none select-none opacity-[0.035] sm:opacity-[0.045] px-4 overflow-hidden">
+      <span class="block text-[14vw] sm:text-[12vw] md:text-[10vw] lg:text-[9.5vw] font-black uppercase tracking-tighter sm:tracking-normal text-black leading-[0.82] text-center max-w-full">
+        Digital
+      </span>
+      <span class="block text-[14vw] sm:text-[12vw] md:text-[10vw] lg:text-[9.5vw] font-black uppercase tracking-tighter sm:tracking-normal text-black leading-[0.82] text-center max-w-full">
+        Employees
+      </span>
+    </div>
+
     <!-- Linear Gradient Fade to White at Bottom -->
     <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white"></div>
   </div>
@@ -64,13 +75,18 @@
   function initHeroSection() {
     const container = document.getElementById('hero-avatar-container');
     const image = document.getElementById('hero-avatar-image');
+    const heading = document.getElementById('hero-heading');
+    const desc = document.getElementById('hero-desc');
+    const watermark = document.getElementById('hero-watermark');
+    const meshGlow = document.getElementById('hero-mesh-glow');
+    const heroSection = document.getElementById('hero-section');
+
     if (!container) return;
 
     // 1. Interactive Subtle 3D Tilt on Mouse Move
     let mouseX = 0;
     let mouseY = 0;
 
-    const heroSection = document.getElementById('hero-section');
     if (heroSection && image) {
       heroSection.addEventListener('mousemove', (e) => {
         const rect = heroSection.getBoundingClientRect();
@@ -110,27 +126,82 @@
       .to('#hero-desc', { y: 0, opacity: 1, duration: 0.5 }, '-=0.4')
       .to('#hero-avatar-container', { scale: 1, opacity: 1, duration: 0.8 }, '-=0.5');
 
-    // 3. Scroll Parallax Behavior (Text drifts up, Image subtle scale up)
-    function handleParallaxScroll() {
-      const scrollY = window.scrollY || window.pageYOffset || 0;
+    // 3. Smooth Multi-Layer Parallax Scroll Physics Engine
+    let currentScroll = 0;
+    let targetScroll = 0;
+    let isTicking = false;
+
+    function updateParallax() {
+      const scrollY = targetScroll;
       const heroHeight = window.innerHeight * 0.85;
-      const progress = Math.min(Math.max(scrollY / heroHeight, 0), 1);
+      const progress = Math.min(Math.max(scrollY / (heroHeight || 1), 0), 1);
 
-      // Heading and body text drift UPWARDS with parallax & fade out
-      gsap.to('#hero-heading', { y: -scrollY * 0.55, opacity: Math.max(1 - progress * 1.3, 0), overwrite: 'auto', duration: 0.05 });
-      gsap.to('#hero-desc', { y: -scrollY * 0.45, opacity: Math.max(1 - progress * 1.4, 0), overwrite: 'auto', duration: 0.05 });
+      // Smooth Interpolation Durations (Power1.out for ultra-silky motion)
+      
+      // A. Heading & Description drift UP cleanly & fade out
+      if (heading) {
+        gsap.to(heading, { 
+          y: -scrollY * 0.42, 
+          opacity: Math.max(1 - progress * 1.35, 0), 
+          duration: 0.4, 
+          ease: 'power1.out', 
+          overwrite: 'auto' 
+        });
+      }
+      if (desc) {
+        gsap.to(desc, { 
+          y: -scrollY * 0.32, 
+          opacity: Math.max(1 - progress * 1.45, 0), 
+          duration: 0.4, 
+          ease: 'power1.out', 
+          overwrite: 'auto' 
+        });
+      }
 
-      // Hero Avatar image subtle zoom on scroll
+      // B. Watermark drifts DOWN at lower parallax rate & scales slightly
+      if (watermark) {
+        gsap.to(watermark, { 
+          y: scrollY * 0.22, 
+          scale: 1 + progress * 0.06,
+          opacity: (1 - progress * 0.8) * (window.innerWidth >= 640 ? 0.045 : 0.035), 
+          duration: 0.4, 
+          ease: 'power1.out', 
+          overwrite: 'auto' 
+        });
+      }
+
+      // C. Mesh Glow ambient drift
+      if (meshGlow) {
+        gsap.to(meshGlow, { 
+          y: scrollY * 0.15, 
+          duration: 0.5, 
+          ease: 'power1.out', 
+          overwrite: 'auto' 
+        });
+      }
+
+      // D. Hero Avatar image subtle zoom & translation on scroll
       gsap.to(container, { 
-        scale: 1 + progress * 0.15, 
-        y: scrollY * 0.08,
-        overwrite: 'auto', 
-        duration: 0.05 
+        scale: 1 + progress * 0.12, 
+        y: scrollY * 0.06, 
+        duration: 0.4, 
+        ease: 'power1.out', 
+        overwrite: 'auto' 
       });
+
+      isTicking = false;
     }
 
-    window.addEventListener('scroll', handleParallaxScroll, { passive: true });
-    handleParallaxScroll();
+    function onScroll() {
+      targetScroll = window.scrollY || window.pageYOffset || 0;
+      if (!isTicking) {
+        requestAnimationFrame(updateParallax);
+        isTicking = true;
+      }
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
   }
 
   // Initialize on DOM Ready
